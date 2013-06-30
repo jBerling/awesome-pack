@@ -1,12 +1,7 @@
-;; Place your bindings here.
+;; The bindings are adapted to work with a swedish keyboard on a Mac with a fn key.
 
-;; For example:
-;;(define-key global-map (kbd "C-+") 'text-scale-increase)
-;;(define-key global-map (kbd "C--") 'text-scale-decrease)
-
+;; Define a new prefix, the "Space Command", my own unpolluted space.
 (define-prefix-command 'space-map)
 
 (define-key global-map (kbd "M-SPC") 'space-map)
 (define-key global-map (kbd "M-SPC M-SPC") 'live-delete-whitespace-except-one)
-
-;; paredit
