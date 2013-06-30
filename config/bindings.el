@@ -11,6 +11,9 @@
 (define-key global-map (kbd "M-SPC") 'space-map)
 (define-key global-map (kbd "M-SPC M-SPC") 'live-delete-whitespace-except-one)
 
+(define-key global-map (kbd "C-+") 'text-scale-increase)
+(define-key global-map (kbd "C--") 'text-scale-decrease)
+
 ;; winner
 (global-set-key (kbd "M-SPC w C-_") 'winner-undo)
 (global-set-key (kbd "M-SPC w M-_") 'winner-redo)
