@@ -23,13 +23,13 @@
 ;;;;;;  paredit ;;;;;;
 
 ;; Experimental M-SPC based
-(define-key global-map (kbd "M-SPC {") 'paredit-wrap-curly)
-(define-key global-map (kbd "M-SPC [") 'paredit-wrap-square)
-(define-key global-map (kbd "M-SPC (") 'paredit-wrap-round)
-(define-key global-map (kbd "M-SPC M-v") 'paredit-backward-slurp-sexp)
-(define-key global-map (kbd "M-SPC M-b") 'paredit-backward-barf-sexp)
-(define-key global-map (kbd "M-SPC M-n") 'paredit-forward-barf-sexp)
-(define-key global-map (kbd "M-SPC M-m") 'paredit-forward-slurp-sexp)
+(define-key paredit-mode-map (kbd "M-SPC {")   'paredit-wrap-curly)
+(define-key paredit-mode-map (kbd "M-SPC [")   'paredit-wrap-square)
+(define-key paredit-mode-map (kbd "M-SPC (")   'paredit-wrap-round)
+(define-key paredit-mode-map (kbd "M-SPC M-v") 'paredit-backward-slurp-sexp)
+(define-key paredit-mode-map (kbd "M-SPC M-b") 'paredit-backward-barf-sexp)
+(define-key paredit-mode-map (kbd "M-SPC M-n") 'paredit-forward-barf-sexp)
+(define-key paredit-mode-map (kbd "M-SPC M-m") 'paredit-forward-slurp-sexp)
 
 ;; From the Bindings pack
 (define-key paredit-mode-map (kbd "C-c l k") 'paredit-splice-sexp-killing-forward)
