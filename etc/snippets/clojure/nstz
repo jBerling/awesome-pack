@@ -1,0 +1,4 @@
+#name: nstz
+# --
+(ns tzbackend.${1:name}
+    (:require [${2:require-list}]))

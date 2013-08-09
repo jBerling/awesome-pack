@@ -10,6 +10,7 @@
 
 (define-key global-map (kbd "M-SPC") 'space-map)
 (define-key global-map (kbd "M-SPC M-SPC") 'live-delete-whitespace-except-one)
+(define-key global-map (kbd "M-SPC f") 'find-file-in-project)
 
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
@@ -19,6 +20,7 @@
 (global-set-key (kbd "M-SPC w M-_") 'winner-redo)
 
 ;; buffer
+(global-set-key (kbd "C-x C-b") 'buffer-menu)
 
 ;;;;;;  paredit ;;;;;;
 

@@ -24,3 +24,8 @@
   (mapc 'kill-buffer
         (delq (current-buffer)
               (remove-if-not 'buffer-file-name (buffer-list)))))
+
+;;(global-linum-mode t)
+;;(global-git-gutter-mode false)
+
+(yas/load-directory "~/.live-packs/awesome-pack/etc/snippets")
