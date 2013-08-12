@@ -1,0 +1,21 @@
+# name: nstz
+# contributor: Johan Jonasson
+# key: nstz
+# --
+(ns `(let* ((nsname '())
+        (dirs (split-string (buffer-file-name) "/"))
+        (aftersrc nil))
+     (dolist (dir dirs)
+        (if aftersrc
+            (progn
+                (setq nsname (cons dir nsname))
+                (setq nsname (cons "." nsname)))
+             (when (or (string= dir "src") (string= dir "test"))
+                (setq aftersrc t))))
+     (when nsname
+       (replace-regexp-in-string "_" "-" (substring (apply 'concat (reverse nsname))  0 -5))))`
+     (:require [clojure.tools.logging     :as log :require [spy info warn]]
+               [clojure.core.reducers     :as r]
+               [somnium.congomongo        :as mongo]
+               [com.timezynk.useful.mongo :as um]
+               [com.timezynk.useful.map   :as umap]$1)$0)
