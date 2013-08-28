@@ -47,6 +47,11 @@
         (delq (current-buffer)
               (remove-if-not 'buffer-file-name (buffer-list)))))
 
+(defun awesome-black-background ()
+  "set the background color to black, if you want more contrast"
+  (interactive)
+  (set-background-color "Black"))
+
 ;;(global-linum-mode t)
 ;;(global-git-gutter-mode false)
 
