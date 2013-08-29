@@ -52,6 +52,9 @@
   (interactive)
   (set-background-color "Black"))
 
+;; Automatic saving and loading of desktops
+;;(desktop-save-mode 1)
+
 ;;(global-linum-mode t)
 ;;(global-git-gutter-mode false)
 
