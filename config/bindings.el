@@ -63,3 +63,12 @@
 (define-key paredit-mode-map (kbd "Ä") 'live-paredit-forward-slurp-sexp-neatly)
 (define-key paredit-mode-map (kbd "M-ö") 'paredit-backward-barf-sexp)
 (define-key paredit-mode-map (kbd "M-ä") 'paredit-forward-barf-sexp)
+
+;; Ace jump mode
+(global-set-key (kbd "C-,") 'ace-jump-mode)
+
+;; Align your code in a pretty way.
+(global-set-key (kbd "C-.") 'align-regexp)
+
+;;browse kill ring (visual paste)
+;;(global-set-key (kbd "M-y") 'browse-kill-ring)
