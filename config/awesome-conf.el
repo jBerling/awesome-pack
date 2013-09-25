@@ -59,3 +59,10 @@
 ;;(global-git-gutter-mode false)
 
 (yas/load-directory "~/.live-packs/awesome-pack/etc/snippets")
+
+;;;;;;;;;;;; dirtree ;;;;;;;;;;;;
+
+(require 'tree-mode)
+(require 'windata)
+(require 'dirtree)
+(autoload 'dirtree "dirtree" "Add directory to tree view")
