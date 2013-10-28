@@ -47,10 +47,15 @@
         (delq (current-buffer)
               (remove-if-not 'buffer-file-name (buffer-list)))))
 
-(defun awesome-black-background ()
+(defun max-contrast ()
   "set the background color to black, if you want more contrast"
   (interactive)
   (set-background-color "Black"))
+
+(defun less-contrast ()
+  "set the background color to gray, if you want less contrast"
+  (interactive)
+  (set-background-color "rgb:1500/2000/2250"))
 
 ;; Automatic saving and loading of desktops
 ;;(desktop-save-mode 1)
