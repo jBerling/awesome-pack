@@ -32,7 +32,6 @@
 
 (setq scroll-step 3) ; keyboard scroll one line at a time
 
-
 ;;;;;;;;;; Misc ;;;;;;;;;;;;;
 
 (defun kill-all-buffers ()

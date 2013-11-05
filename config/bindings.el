@@ -3,6 +3,9 @@
 ;; Define a new prefix, the "Space Command", my own unpolluted space.
 (define-prefix-command 'space-map)
 
+;; keychord
+(key-chord-mode 1)
+
 ;; Space Command Groups
 ;;
 ;; w - winner
@@ -16,8 +19,8 @@
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 
 ;; winner
-(global-set-key (kbd "M-SPC w C-_") 'winner-undo)
-(global-set-key (kbd "M-SPC w M-_") 'winner-redo)
+(global-set-key (kbd "M-SPC w u") 'winner-undo)
+(global-set-key (kbd "M-SPC w r") 'winner-redo)
 
 ;; buffer
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
@@ -56,13 +59,25 @@
 (define-key paredit-mode-map (kbd "M-\\")    'live-paredit-delete-horizontal-space)
 
 ;; For swedish users!
-(define-key paredit-mode-map (kbd "ö") 'paredit-open-round)
-(define-key paredit-mode-map (kbd "ä") 'paredit-open-bracket)
-(define-key paredit-mode-map (kbd "å") 'paredit-open-curly)
+;;(define-key paredit-mode-map (kbd "ö") 'paredit-open-round)
+;;(define-key paredit-mode-map (kbd "ä") 'paredit-open-bracket)
+;;(define-key paredit-mode-map (kbd "å") 'paredit-open-curly)
 (define-key paredit-mode-map (kbd "Ö") 'paredit-backward-slurp-sexp)
 (define-key paredit-mode-map (kbd "Ä") 'live-paredit-forward-slurp-sexp-neatly)
 (define-key paredit-mode-map (kbd "M-ö") 'paredit-backward-barf-sexp)
 (define-key paredit-mode-map (kbd "M-ä") 'paredit-forward-barf-sexp)
+
+;(key-chord-define paredit-mode-map "" 'paredit-open-round)
+;(key-chord-define paredit-mode-map "" 'paredit-open-bracket)
+;(key-chord-define paredit-mode-map "" 'paredit-open-curly)
+;(key-chord-define paredit-mode-map "" 'paredit-backward-slurp-sexp)
+;(key-chord-define paredit-mode-map "" 'live-paredit-forward-slurp-sexp-neatly)
+;(key-chord-define paredit-mode-map "" 'paredit-backward-barf-sexp)
+;(key-chord-define-paredit-mode-map "" 'paredit-forward-barf-sexp)
+
+;;key chords
+(key-chord-define-global "zx" 'undo-tree-undo)
+(key-chord-define-global "cx" 'undo-tree-redo)
 
 ;; Ace jump mode
 (global-set-key (kbd "C-,") 'ace-jump-mode)
