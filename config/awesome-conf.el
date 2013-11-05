@@ -32,6 +32,7 @@
 
 (setq scroll-step 3) ; keyboard scroll one line at a time
 
+
 ;;;;;;;;;; Misc ;;;;;;;;;;;;;
 
 (defun kill-all-buffers ()
@@ -64,9 +65,15 @@
 
 (yas/load-directory "~/.live-packs/awesome-pack/etc/snippets")
 
+
 ;;;;;;;;;;;; dirtree ;;;;;;;;;;;;
 
 (require 'tree-mode)
 (require 'windata)
 (require 'dirtree)
 (autoload 'dirtree "dirtree" "Add directory to tree view")
+
+
+;;;;;;;;;;;; nrepl-inspect ;;;;;;;;;;;
+
+(require 'nrepl-inspect)
