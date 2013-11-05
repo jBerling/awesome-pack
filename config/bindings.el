@@ -91,12 +91,18 @@
 (key-chord-define-global "7u" (lambda nil (interactive)
                                 (window-number-select 7)))
 
-(key-chord-define-global "zx" 'undo-tree-undo)
-(key-chord-define-global "cx" 'undo-tree-redo)
+(key-chord-define-global "xz" 'undo-tree-undo)
+(key-chord-define-global "xc" 'undo-tree-redo)
 (key-chord-define-global "x0" 'delete-window)
 (key-chord-define-global "x1" 'delete-other-windows)
 (key-chord-define-global "x2" 'split-window-below)
 (key-chord-define-global "x3" 'split-window-right)
+(key-chord-define-global "xx" 'smex)
+(key-chord-define-global "xf" 'ido-find-file)
+(key-chord-define-global "xb" 'ido-switch-buffer)
+(key-chord-define-global "xk" 'ido-kill-buffer)
+(key-chord-define-global "xs" 'save-buffer)
+(key-chord-define-global "zz" 'keyboard-quit)
 
 ;; Ace jump mode
 (global-set-key (kbd "C-,") 'ace-jump-mode)
