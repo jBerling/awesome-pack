@@ -111,6 +111,8 @@
 (key-chord-define-global "xk" 'ido-kill-buffer)
 (key-chord-define-global "xs" 'save-buffer)
 (key-chord-define-global "zz" 'keyboard-quit)
+(key-chord-define-global "++" 'text-scale-increase)
+(key-chord-define-global "--" 'text-scale-decrease)
 
 ;; Ace jump mode
 (global-set-key (kbd "C-,") 'ace-jump-mode)
