@@ -74,6 +74,8 @@
 (key-chord-define paredit-mode-map "8u" 'paredit-open-round)
 (key-chord-define paredit-mode-map "9i" 'paredit-open-bracket)
 (key-chord-define paredit-mode-map "4r" 'paredit-open-curly)
+(key-chord-define paredit-mode-map "kk" 'paredit-kill)
+(key-chord-define paredit-mode-map "yy" 'cua-paste)
 
 ;;key chords
 (key-chord-define-global "1q" (lambda nil (interactive)
@@ -90,7 +92,13 @@
                                 (window-number-select 6)))
 (key-chord-define-global "7u" (lambda nil (interactive)
                                 (window-number-select 7)))
-
+(key-chord-define-global "7y" (lambda nil (interactive) (insert "/")))
+(key-chord-define-global "2w" (lambda nil (interactive) (insert "\"")))
+(key-chord-define-global "3e" (lambda nil (interactive) (insert "#")))
+(key-chord-define-global "5t" (lambda nil (interactive) (insert "%")))
+(key-chord-define-global "6t" (lambda nil (interactive) (insert "&")))
+(key-chord-define-global "0o" (lambda nil (interactive) (insert "=")))
+(key-chord-define-global "+p" (lambda nil (interactive) (insert "?")))
 (key-chord-define-global "xz" 'undo-tree-undo)
 (key-chord-define-global "xc" 'undo-tree-redo)
 (key-chord-define-global "x0" 'delete-window)
