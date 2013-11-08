@@ -19,6 +19,17 @@
  '(ns-right-alternate-modifier (quote meta))
  '(ns-right-command-modifier   (quote control)))
 
+(defun heander-keys ()
+  "right alt and right cmd will be released by emacs"
+  (interactive)
+  (ns-right-alternate-modifier (self-insert-command))
+  (ns-right-command-modifier   (self-insert-command)))
+
+(defun jonasson-keys ()
+  "right alt and right cmd will be captured by emacs"
+  (interactive)
+  (ns-right-alternate-modifier (quote meta))
+  (ns-right-command-modifier   (quote control)))
 
 ;;;;;;;;;;; Scrolling ;;;;;;;;;;;
 
