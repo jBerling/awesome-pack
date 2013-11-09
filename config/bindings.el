@@ -1,40 +1,33 @@
 ;; The bindings are adapted to work with a swedish keyboard on a Mac with a fn key.
 
-;; Define a new prefix, the "Space Command", my own unpolluted space.
-(define-prefix-command 'space-map)
-
 ;; keychord
 (key-chord-mode 1)
 
-;; Space Command Groups
-;;
-;; w - winner
-;; b - buffer
+;; Define a new prefix, the "Space Command", my own unpolluted space.
+;(define-prefix-command 'space-map)
 
-(define-key global-map (kbd "M-SPC") 'space-map)
-(define-key global-map (kbd "M-SPC M-SPC") 'live-delete-whitespace-except-one)
-(define-key global-map (kbd "M-SPC f") 'find-file-in-project)
+;;;; Space Command Groups
+;;;;
+;;;; w - winner
+;;;; b - buffer
 
-(define-key global-map (kbd "C-+") 'text-scale-increase)
-(define-key global-map (kbd "C--") 'text-scale-decrease)
+;;(define-key global-map (kbd "M-SPC") 'space-map)
+;;(define-key global-map (kbd "M-SPC M-SPC") 'live-delete-whitespace-except-one)
+;;(define-key global-map (kbd "M-SPC f") 'find-file-in-project)
 
-;; winner
-(global-set-key (kbd "M-SPC w u") 'winner-undo)
-(global-set-key (kbd "M-SPC w r") 'winner-redo)
+;;(define-key global-map (kbd "C-+") 'text-scale-increase)
+;;(define-key global-map (kbd "C--") 'text-scale-decrease)
+
+;;;; winner
+;;(global-set-key (kbd "M-SPC w u") 'winner-undo)
+;;(global-set-key (kbd "M-SPC w r") 'winner-redo)
+
+(define-key global-map (kbd "M-SPC") 'inject-vacuum)
 
 ;; buffer
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
 
-;;;;;;  paredit ;;;;;;
-
-;; Experimental M-SPC based
-(define-key paredit-mode-map (kbd "M-SPC {")   'paredit-wrap-curly)
-(define-key paredit-mode-map (kbd "M-SPC [")   'paredit-wrap-square)
-(define-key paredit-mode-map (kbd "M-SPC (")   'paredit-wrap-round)
-(define-key paredit-mode-map (kbd "M-SPC M-v") 'paredit-backward-slurp-sexp)
-(define-key paredit-mode-map (kbd "M-SPC M-b") 'paredit-backward-barf-sexp)
-(define-key paredit-mode-map (kbd "M-SPC M-n") 'paredit-forward-barf-sexp)
-(define-key paredit-mode-map (kbd "M-SPC M-m") 'paredit-forward-slurp-sexp)
+;;;;;;  paredit ;;;;;
 
 ;; From the Bindings pack
 (define-key paredit-mode-map (kbd "C-c l k") 'paredit-splice-sexp-killing-forward)

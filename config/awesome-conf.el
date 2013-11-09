@@ -68,6 +68,24 @@
   (interactive)
   (set-background-color "rgb:1500/2000/2250"))
 
+(defun inject-vacuum ()
+  "Delete all spaces and tabs around point"
+  (interactive)
+  (let ((orig-pos (point))
+        (skip-characters " \t\n\r")
+        (n 0))
+    (skip-chars-backward skip-characters)
+    (constrain-to-field nil orig-pos)
+    (dotimes (i n)
+      (if (= (following-char) ?\s)
+	  (forward-char 1)
+	(insert ?\s)))
+    (delete-region
+     (point)
+     (progn
+       (skip-chars-forward skip-characters)
+       (constrain-to-field nil orig-pos t)))))
+
 ;; Automatic saving and loading of desktops
 ;;(desktop-save-mode 1)
 
