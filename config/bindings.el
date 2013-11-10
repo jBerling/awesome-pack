@@ -106,7 +106,7 @@
 (key-chord-define-global "0o" (lambda nil (interactive) (insert "=")))
 (key-chord-define-global "+p" (lambda nil (interactive) (insert "?")))
 
-(key-chord-define-global "xz" 'undo-tree-undo)
+(key-chord-define-global "xz" 'undo-tree-undo) ; s-x already defined
 (key-chord-define-global "xc" 'undo-tree-redo)
 (key-chord-define-global "x0" 'delete-window)
 (key-chord-define-global "x1" 'delete-other-windows)
@@ -116,7 +116,7 @@
 (key-chord-define-global "xf" 'ido-find-file)
 (key-chord-define-global "xb" 'ido-switch-buffer)
 (key-chord-define-global "xk" 'ido-kill-buffer)
-(key-chord-define-global "xs" 'save-buffer)
+;;(key-chord-define-global "xs" 'save-buffer) s-s is already defined
 (key-chord-define-global "zz" 'keyboard-quit)
 (key-chord-define-global "++" 'text-scale-increase)
 (key-chord-define-global "--" 'text-scale-decrease)
