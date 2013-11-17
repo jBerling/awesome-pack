@@ -15,8 +15,8 @@
 ;;(define-key global-map (kbd "M-SPC M-SPC") 'live-delete-whitespace-except-one)
 ;;(define-key global-map (kbd "M-SPC f") 'find-file-in-project)
 
-;;(define-key global-map (kbd "C-+") 'text-scale-increase)
-;;(define-key global-map (kbd "C--") 'text-scale-decrease)
+(define-key global-map (kbd "C-+") 'text-scale-increase)
+(define-key global-map (kbd "C--") 'text-scale-decrease)
 
 ;;;; winner
 ;;(global-set-key (kbd "M-SPC w u") 'winner-undo)
@@ -118,8 +118,8 @@
 (key-chord-define-global "xk" 'ido-kill-buffer)
 ;;(key-chord-define-global "xs" 'save-buffer) s-s is already defined
 (key-chord-define-global "zz" 'keyboard-quit)
-(key-chord-define-global "++" 'text-scale-increase)
-(key-chord-define-global "--" 'text-scale-decrease)
+;;(key-chord-define-global "++" 'text-scale-increase)
+;;(key-chord-define-global "--" 'text-scale-decrease)
 
 ;; Ace jump mode
 (global-set-key (kbd "C-,") 'ace-jump-mode)
