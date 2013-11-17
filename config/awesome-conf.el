@@ -68,6 +68,16 @@
   (interactive)
   (set-background-color "rgb:1500/2000/2250"))
 
+(defun less-contrast-greenish ()
+  "set the background color to a greenish gray"
+  (interactive)
+  (set-background-color "rgb:1750/2200/1800"))
+
+(defun less-contrast-warm ()
+  "set the background color to a warm gray"
+  (interactive)
+  (set-background-color "rgb:2100/2000/1750"))
+
 (defun inject-vacuum ()
   "Delete all spaces and tabs around point"
   (interactive)
