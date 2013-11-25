@@ -62,8 +62,8 @@
 
 (key-chord-define paredit-mode-map "8b" 'paredit-backward-slurp-sexp)
 (key-chord-define paredit-mode-map "9n" 'live-paredit-forward-slurp-sexp-neatly)
-(key-chord-define paredit-mode-map "7v" 'paredit-backward-barf-sexp)
-(key-chord-define paredit-mode-map "0m" 'paredit-forward-barf-sexp)
+(key-chord-define paredit-mode-map "8n" 'paredit-backward-barf-sexp)
+(key-chord-define paredit-mode-map "9m" 'paredit-forward-barf-sexp)
 (key-chord-define paredit-mode-map "8u" 'paredit-open-round)
 (key-chord-define paredit-mode-map "8h" 'paredit-open-bracket)
 (key-chord-define paredit-mode-map "8j" 'paredit-open-curly)
