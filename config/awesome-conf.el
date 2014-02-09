@@ -31,7 +31,8 @@
   (ns-right-alternate-modifier (quote meta))
   (ns-right-command-modifier   (quote control)))
 
-;;;;;;;;;;; Scrolling ;;;;;;;;;;;
+
+                                        ; Scrolling
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 
@@ -44,7 +45,7 @@
 (setq scroll-step 3) ; keyboard scroll one line at a time
 
 
-;;;;;;;;;; Misc ;;;;;;;;;;;;;
+                                        ; Misc
 
 (defun kill-all-buffers ()
   "kill all buffers"
@@ -57,26 +58,6 @@
   (mapc 'kill-buffer
         (delq (current-buffer)
               (remove-if-not 'buffer-file-name (buffer-list)))))
-
-(defun max-contrast ()
-  "set the background color to black, if you want more contrast"
-  (interactive)
-  (set-background-color "Black"))
-
-(defun less-contrast ()
-  "set the background color to gray, if you want less contrast"
-  (interactive)
-  (set-background-color "rgb:1500/2000/2250"))
-
-(defun less-contrast-greenish ()
-  "set the background color to a greenish gray"
-  (interactive)
-  (set-background-color "rgb:1750/2200/1800"))
-
-(defun less-contrast-warm ()
-  "set the background color to a warm gray"
-  (interactive)
-  (set-background-color "rgb:2100/2000/1750"))
 
 (defun inject-vacuum ()
   "Delete all spaces and tabs around point"
@@ -105,7 +86,40 @@
 (yas/load-directory "~/.live-packs/awesome-pack/etc/snippets")
 
 
-;;;;;;;;;;;; dirtree ;;;;;;;;;;;;
+                                        ; Change Background Colors
+
+(defun max-contrast ()
+  "set the background color to black, if you want more contrast"
+  (interactive)
+  (set-background-color "Black"))
+
+(defun high-contrast ()
+  "set the background color to near black."
+  (interactive)
+  (set-background-color "rgb:1300/1300/1300"))
+
+(defun less-contrast ()
+  "set the background color to gray, if you want less contrast"
+  (interactive)
+  (set-background-color "rgb:1500/2000/2250"))
+
+(defun less-contrast-greenish ()
+  "set the background color to a greenish gray"
+  (interactive)
+  (set-background-color "rgb:1750/2200/1800"))
+
+(defun less-contrast-warm ()
+  "set the background color to a warm gray"
+  (interactive)
+  (set-background-color "rgb:2100/2100/1750"))
+
+(defun less-contrast-red ()
+  "set the background color to a dark red"
+  (interactive)
+  (set-background-color "rgb:2350/0250/0250"))
+
+
+                                        ; dirtree
 
 (require 'tree-mode)
 (require 'windata)
@@ -113,6 +127,21 @@
 (autoload 'dirtree "dirtree" "Add directory to tree view")
 
 
-;;;;;;;;;;;; nrepl-inspect ;;;;;;;;;;;
+                                        ; nrepl-inspect
 
 (require 'nrepl-inspect)
+
+
+                                        ; skewer-mode
+
+;;check later https://github.com/skeeto/skewer-mode
+
+;;(require 'simple-httpd)
+;;(setq httpd-root "/var/www")
+;;(httpd-start)
+
+;;(require 'skewer-mode)
+
+;;(add-hook 'js2-mode-hook 'skewer-mode)
+;;(add-hook 'css-mode-hook 'skewer-css-mode)
+;;(add-hook 'html-mode-hook 'skewer-html-mode)
