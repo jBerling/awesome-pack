@@ -136,6 +136,9 @@
 
 ;;check later https://github.com/skeeto/skewer-mode
 
+;; it's in a folder. Maybe use (add-to-list "<path/to/directory>")
+;; before require?
+
 ;;(require 'simple-httpd)
 ;;(setq httpd-root "/var/www")
 ;;(httpd-start)
@@ -145,3 +148,8 @@
 ;;(add-hook 'js2-mode-hook 'skewer-mode)
 ;;(add-hook 'css-mode-hook 'skewer-css-mode)
 ;;(add-hook 'html-mode-hook 'skewer-html-mode)
+
+
+                                        ; zencoding
+
+(require 'zencoding-mode)
