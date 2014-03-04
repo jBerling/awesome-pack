@@ -85,38 +85,47 @@
 
 (yas/load-directory "~/.live-packs/awesome-pack/etc/snippets")
 
+                                        ; Colors
+
+(set-face-background 'hl-line "#192100")
 
                                         ; Change Background Colors
 
 (defun max-contrast ()
   "set the background color to black, if you want more contrast"
   (interactive)
-  (set-background-color "Black"))
+  (set-background-color "Black")
+  (set-face-background 'hl-line "#000000"))
 
 (defun high-contrast ()
   "set the background color to near black."
   (interactive)
-  (set-background-color "rgb:1300/1300/1300"))
+  (set-background-color "rgb:1300/1300/1300")
+  (set-face-background 'hl-line "#000000"))
 
 (defun less-contrast ()
   "set the background color to gray, if you want less contrast"
   (interactive)
-  (set-background-color "rgb:1500/2000/2250"))
+  (set-background-color "rgb:1500/2000/2250")
+  (set-face-background 'hl-line "#000000"))
 
 (defun less-contrast-greenish ()
   "set the background color to a greenish gray"
   (interactive)
-  (set-background-color "rgb:1750/2200/1800"))
+  (set-background-color "rgb:1750/2200/1800")
+  (set-face-background 'hl-line "#000000"))
 
 (defun less-contrast-warm ()
   "set the background color to a warm gray"
   (interactive)
-  (set-background-color "rgb:2100/2100/1750"))
+  (set-background-color "rgb:2100/2100/1750")
+  (set-face-background 'hl-line "#000000"))
 
 (defun less-contrast-red ()
   "set the background color to a dark red"
   (interactive)
-  (set-background-color "rgb:2350/0250/0250"))
+  (set-background-color "rgb:2350/0250/0250")
+  (set-face-background 'hl-line "#000000"))
 
 
                                         ; dirtree
