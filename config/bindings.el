@@ -51,6 +51,8 @@
 (define-key paredit-mode-map (kbd "M-k")     'live-paredit-backward-kill)
 (define-key paredit-mode-map (kbd "M-\\")    'live-paredit-delete-horizontal-space)
 
+(define-key paredit-mode-map (kbd "C-c C-r") 'nrepl-reset)
+
 ;; For swedish users!
 ;;(define-key paredit-mode-map (kbd "ö") 'paredit-open-round)
 ;;(define-key paredit-mode-map (kbd "ä") 'paredit-open-bracket)

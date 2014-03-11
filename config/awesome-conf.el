@@ -128,6 +128,23 @@
   (set-face-background 'hl-line "#000000"))
 
 
+                                        ; repl stuff
+
+(defun nrepl-refresh ()
+  (interactive)
+  (set-buffer "*nrepl*")
+  (goto-char (point-max))
+  (insert "(clojure.tools.namespace.repl/refresh)")
+  (nrepl-return))
+
+(defun nrepl-reset ()
+  (interactive)
+  (set-buffer "*nrepl*")
+  (goto-char (point-max))
+  (insert "(reset)")
+  (nrepl-return))
+
+
                                         ; dirtree
 
 (require 'tree-mode)
