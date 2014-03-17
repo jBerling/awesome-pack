@@ -87,6 +87,8 @@
 
                                         ; Colors
 
+(load-library "awesome-theme")
+
 (set-face-background 'hl-line "#192100")
 
                                         ; Change Background Colors
