@@ -35,14 +35,13 @@
                                         ; Scrolling
 
 ;; scroll one line at a time (less "jumpy" than defaults)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ; one line at a time
+;; scroll window under mouse
+(setq mouse-wheel-follow-mouse 't)
 
-;;(setq mouse-wheel-progressive-speed nil) ; don't accelerate scrolling
-
-(setq mouse-wheel-follow-mouse 't) ; scroll window under mouse
-
-(setq scroll-step 3) ; keyboard scroll one line at a time
+;; keyboard scroll one line at a time
+(setq scroll-step 3)
 
 
                                         ; Misc
