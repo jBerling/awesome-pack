@@ -182,3 +182,10 @@
                                         ; zencoding
 
 (require 'zencoding-mode)
+
+
+
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
