@@ -131,3 +131,6 @@
 
 ;;browse kill ring (visual paste)
 ;;(global-set-key (kbd "M-y") 'browse-kill-ring)
+
+;; Auto indent
+(define-key global-map (kbd "RET") 'newline-and-indent)
