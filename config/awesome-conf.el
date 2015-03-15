@@ -31,6 +31,13 @@
 ;; keyboard scroll one line at a time
 (setq scroll-step 3)
 
+                                        ; Melpa
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+
+
 
                                         ; Misc
 
@@ -93,10 +100,6 @@
                                         ; zencoding
 (require 'zencoding-mode)
 
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-
 (global-auto-revert-mode +1)
 
 (global-git-gutter-mode -1)
@@ -106,14 +109,14 @@
 
 
 
-;;;;;;; Temp stuff
+;; Helm
 
-;; (live-add-pack-lib "/async/")
-;; (live-add-pack-lib "/helm/")
+(live-add-pack-lib "/async/")
+(live-add-pack-lib "/helm/")
 
-;; (require 'helm-config)
+(require 'helm-config)
 
-;; (helm-mode 1)
+(helm-mode 1)
 
 ;; (global-set-key (kbd "C-x C-b")   'helm-buffers-list)
 ;; (global-set-key (kbd "M-/")       'helm-dabbrev)
