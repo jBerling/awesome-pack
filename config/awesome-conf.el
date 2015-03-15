@@ -110,6 +110,7 @@
 
 
 ;; Helm
+(ido-mode 0)
 
 (live-add-pack-lib "/async/")
 (live-add-pack-lib "/helm/")
@@ -117,6 +118,13 @@
 (require 'helm-config)
 
 (helm-mode 1)
+(helm-autoresize-mode 1)
 
-;; (global-set-key (kbd "C-x C-b")   'helm-buffers-list)
-;; (global-set-key (kbd "M-/")       'helm-dabbrev)
+(setq helm-M-x-fuzzy-match t)
+(setq helm-recentf-fuzzy-match t)
+(setq helm-buffers-fuzzy-matching t)
+(setq helm-recentf-fuzzy-match t)
+
+
+;; Server
+(server-start 1)

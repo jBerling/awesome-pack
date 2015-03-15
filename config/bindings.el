@@ -106,3 +106,9 @@
 
 ;; Auto indent
 (define-key global-map (kbd "RET") 'newline-and-indent)
+
+;; Helm
+(key-chord-define-global "zb" 'helm-buffers-list)
+(key-chord-define-global "zh" 'helm-mini)
+(key-chord-define-global "zx" 'helm-M-x)
+;(key-chord-define-global "zd" 'helm-dabbrev)
