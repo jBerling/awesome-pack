@@ -178,13 +178,8 @@
 ;;(add-hook 'css-mode-hook 'skewer-css-mode)
 ;;(add-hook 'html-mode-hook 'skewer-html-mode)
 
-
                                         ; zencoding
-
 (require 'zencoding-mode)
-
-
-
 
 (require 'package)
 (add-to-list 'package-archives
