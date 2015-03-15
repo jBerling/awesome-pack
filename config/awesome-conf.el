@@ -133,19 +133,19 @@
 
                                         ; repl stuff
 
-(defun nrepl-refresh ()
-  (interactive)
-  (set-buffer "*nrepl*")
-  (goto-char (point-max))
-  (insert "(clojure.tools.namespace.repl/refresh)")
-  (nrepl-return))
+;; (defun nrepl-refresh ()
+;;   (interactive)
+;;   (set-buffer "*nrepl*")
+;;   (goto-char (point-max))
+;;   (insert "(clojure.tools.namespace.repl/refresh)")
+;;   (nrepl-return))
 
-(defun nrepl-reset ()
-  (interactive)
-  (set-buffer "*nrepl*")
-  (goto-char (point-max))
-  (insert "(reset)")
-  (nrepl-return))
+;; (defun nrepl-reset ()
+;;   (interactive)
+;;   (set-buffer "*nrepl*")
+;;   (goto-char (point-max))
+;;   (insert "(reset)")
+;;   (nrepl-return))
 
 
                                         ; dirtree
@@ -158,7 +158,7 @@
 
                                         ; nrepl-inspect
 
-(require 'nrepl-inspect)
+;;(require 'nrepl-inspect)
 
 
                                         ; skewer-mode
