@@ -184,3 +184,10 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
+
+(global-auto-revert-mode +1)
+
+(global-git-gutter-mode -1)
+
+;; Todo: not working. Have to call it manually
+;;(color-theme-awesome)
