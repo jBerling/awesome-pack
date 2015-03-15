@@ -19,18 +19,6 @@
  '(ns-right-alternate-modifier (quote meta))
  '(ns-right-command-modifier   (quote control)))
 
-(defun heander-keys ()
-  "right alt and right cmd will be released by emacs"
-  (interactive)
-  (ns-right-alternate-modifier (self-insert-command))
-  (ns-right-command-modifier   (self-insert-command)))
-
-(defun jonasson-keys ()
-  "right alt and right cmd will be captured by emacs"
-  (interactive)
-  (ns-right-alternate-modifier (quote meta))
-  (ns-right-command-modifier   (quote control)))
-
 
                                         ; Scrolling
 
@@ -76,12 +64,6 @@
        (skip-chars-forward skip-characters)
        (constrain-to-field nil orig-pos t)))))
 
-;; Automatic saving and loading of desktops
-;;(desktop-save-mode 1)
-
-;;(global-linum-mode t)
-;;(global-git-gutter-mode false)
-
 (yas/load-directory "~/.live-packs/awesome-pack/etc/snippets")
 
                                         ; Colors
@@ -91,45 +73,6 @@
 ;(load-library "espresso-theme")
 
 (set-face-background 'hl-line "#192100")
-
-                                        ; Change Background Colors
-
-(defun max-contrast ()
-  "set the background color to black, if you want more contrast"
-  (interactive)
-  (set-background-color "Black")
-  (set-face-background 'hl-line "#000000"))
-
-(defun high-contrast ()
-  "set the background color to near black."
-  (interactive)
-  (set-background-color "rgb:1300/1300/1300")
-  (set-face-background 'hl-line "#000000"))
-
-(defun less-contrast ()
-  "set the background color to gray, if you want less contrast"
-  (interactive)
-  (set-background-color "rgb:1500/2000/2250")
-  (set-face-background 'hl-line "#000000"))
-
-(defun less-contrast-greenish ()
-  "set the background color to a greenish gray"
-  (interactive)
-  (set-background-color "rgb:1750/2200/1800")
-  (set-face-background 'hl-line "#000000"))
-
-(defun less-contrast-warm ()
-  "set the background color to a warm gray"
-  (interactive)
-  (set-background-color "rgb:2100/2100/1750")
-  (set-face-background 'hl-line "#000000"))
-
-(defun less-contrast-red ()
-  "set the background color to a dark red"
-  (interactive)
-  (set-background-color "rgb:2350/0250/0250")
-  (set-face-background 'hl-line "#000000"))
-
 
                                         ; repl stuff
 
@@ -147,37 +90,6 @@
 ;;   (insert "(reset)")
 ;;   (nrepl-return))
 
-
-                                        ; dirtree
-
-(require 'tree-mode)
-(require 'windata)
-(require 'dirtree)
-(autoload 'dirtree "dirtree" "Add directory to tree view")
-
-
-                                        ; nrepl-inspect
-
-;;(require 'nrepl-inspect)
-
-
-                                        ; skewer-mode
-
-;;check later https://github.com/skeeto/skewer-mode
-
-;; it's in a folder. Maybe use (add-to-list "<path/to/directory>")
-;; before require?
-
-;;(require 'simple-httpd)
-;;(setq httpd-root "/var/www")
-;;(httpd-start)
-
-;;(require 'skewer-mode)
-
-;;(add-hook 'js2-mode-hook 'skewer-mode)
-;;(add-hook 'css-mode-hook 'skewer-css-mode)
-;;(add-hook 'html-mode-hook 'skewer-html-mode)
-
                                         ; zencoding
 (require 'zencoding-mode)
 
@@ -191,3 +103,17 @@
 
 ;; Todo: not working. Have to call it manually
 ;;(color-theme-awesome)
+
+
+
+;;;;;;; Temp stuff
+
+;; (live-add-pack-lib "/async/")
+;; (live-add-pack-lib "/helm/")
+
+;; (require 'helm-config)
+
+;; (helm-mode 1)
+
+;; (global-set-key (kbd "C-x C-b")   'helm-buffers-list)
+;; (global-set-key (kbd "M-/")       'helm-dabbrev)
