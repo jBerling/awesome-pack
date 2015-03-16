@@ -20,7 +20,7 @@
  '(ns-right-command-modifier   (quote control)))
 
 
-                                        ; Scrolling
+                                        ; Scrolling ;
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
@@ -31,15 +31,47 @@
 ;; keyboard scroll one line at a time
 (setq scroll-step 3)
 
-                                        ; Melpa
+                                        ; Melpa ;
 
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(package-initialize)
 
 
+;; Code below from
+;; http://toumorokoshi.github.io/emacs-from-scratch-part-2-package-management.html
 
-                                        ; Misc
+;; My packages
+(defvar required-packages
+  '(magit
+    projectile)
+  "My packages, installed at launch")
+
+;; my-packages.el
+(require 'cl)
+
+;; method to check if all packages are installed
+(defun packages-installed-p ()
+  (loop for p in required-packages
+        when (not (package-installed-p p)) do (return nil)
+        finally (return t)))
+
+;; if not all packages are installed, check one by one and install the missing ones.
+(unless (packages-installed-p)
+  ; check for new packages (package versions)
+  (message "%s" "Emacs is now refreshing its package database...")
+  (package-refresh-contents)
+  (message "%s" " done.")
+  ; install the missing packages
+  (dolist (p required-packages)
+    (when (not (package-installed-p p))
+      (package-install p))))
+
+
+                                        ; Misc ;
 
 (defun kill-all-buffers ()
   "kill all buffers"
@@ -73,7 +105,7 @@
 
 (yas/load-directory "~/.live-packs/awesome-pack/etc/snippets")
 
-                                        ; Colors
+                                        ; Colors ;
 
 (load-library "awesome-theme")
 
@@ -81,7 +113,7 @@
 
 (set-face-background 'hl-line "#192100")
 
-                                        ; repl stuff
+                                        ; Clojure repl stuff ;
 
 ;; (defun nrepl-refresh ()
 ;;   (interactive)
@@ -97,26 +129,19 @@
 ;;   (insert "(reset)")
 ;;   (nrepl-return))
 
-                                        ; zencoding
+                                        ; zencoding ;
+
 (require 'zencoding-mode)
 
-(global-auto-revert-mode +1)
 
-(global-git-gutter-mode -1)
-
-;; Todo: not working. Have to call it manually
-;;(color-theme-awesome)
-
-
-
-;; Helm
-(ido-mode 0)
+                                        ; Helm ;
 
 (live-add-pack-lib "/async/")
 (live-add-pack-lib "/helm/")
 
 (require 'helm-config)
 
+(ido-mode 0)
 (helm-mode 1)
 (helm-autoresize-mode 1)
 
@@ -125,6 +150,25 @@
 (setq helm-buffers-fuzzy-matching t)
 (setq helm-recentf-fuzzy-match t)
 
+                                        ; Projectile ;
 
-;; Server
+(require 'helm-projectile)
+
+(projectile-global-mode)
+
+
+                                        ; Company ;
+
+;; https://github.com/ifesdjeen/emacs-live-packs/blob/master/customizations/init.el
+;;(live-add-pack-lib "/company-mode/")
+;;(require 'company)
+;;(add-hook 'after-init-hook 'global-company-mode)
+
+
+                                        ; Misc ;
+
 (server-start 1)
+(global-auto-revert-mode +1)
+(global-git-gutter-mode -1)
+(add-hook 'after-init-hook 'color-theme-awesome)
+;(add-hook 'after-init-hook (lambda () (load-theme 'color-theme-awesome t)))

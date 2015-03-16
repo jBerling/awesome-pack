@@ -1,6 +1,6 @@
 ;; The bindings are adapted to work with a swedish keyboard on a Mac with a fn key.
 
-;; keychord
+                                        ; keychord ;
 (key-chord-mode 1)
 
 (define-key global-map (kbd "C-+") 'text-scale-increase)
@@ -8,10 +8,13 @@
 
 (define-key global-map (kbd "M-SPC") 'inject-vacuum)
 
-;; buffer
+
+                                        ; buffer ;
+
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
 
-;;;;;;  paredit ;;;;;
+
+                                        ; paredit ;
 
 ;; From the Bindings pack
 (define-key paredit-mode-map (kbd "C-c l k") 'paredit-splice-sexp-killing-forward)
@@ -49,7 +52,9 @@
 (key-chord-define paredit-mode-map "kk" 'paredit-kill)
 (key-chord-define paredit-mode-map "yy" 'cua-paste)
 
-;;key chords
+
+                                        ;key chords
+
 (key-chord-define-global "1a" (lambda nil (interactive)
                                 (window-number-select 1)))
 (key-chord-define-global "2s" (lambda nil (interactive)
@@ -98,17 +103,30 @@
 ;;(key-chord-define-global "xs" 'save-buffer) s-s is already defined
 ;;(key-chord-define-global "zz" 'keyboard-quit)
 
-;; Ace jump mode
+
+                                        ; Ace jump mode ;
+
 (global-set-key (kbd "C-,") 'ace-jump-mode)
 
-;; Align your code in a pretty way.
+
+                                        ; Align your code in a pretty way. ;
+
 (global-set-key (kbd "C-.") 'align-regexp)
 
-;; Auto indent
+
+                                        ; Auto indent ;
+
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
-;; Helm
+
+                                        ; Helm ;
+
 (key-chord-define-global "zb" 'helm-buffers-list)
 (key-chord-define-global "zh" 'helm-mini)
 (key-chord-define-global "zx" 'helm-M-x)
-;(key-chord-define-global "zd" 'helm-dabbrev)
+
+
+                                        ; Projectile ;
+
+(key-chord-define-global "zf" 'helm-projectile-find-file)
+(key-chord-define-global "zd" 'projectile-find-dir)
