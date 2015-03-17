@@ -167,7 +167,7 @@
 
                                         ; Misc ;
 
-(server-start 1)
+(server-start)
 (global-auto-revert-mode +1)
 (global-git-gutter-mode -1)
 (add-hook 'after-init-hook 'color-theme-awesome)
