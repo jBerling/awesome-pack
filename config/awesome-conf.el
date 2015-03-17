@@ -172,3 +172,5 @@
 (global-git-gutter-mode -1)
 (add-hook 'after-init-hook 'color-theme-awesome)
 ;(add-hook 'after-init-hook (lambda () (load-theme 'color-theme-awesome t)))
+
+; tada
