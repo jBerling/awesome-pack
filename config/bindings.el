@@ -97,7 +97,8 @@
 (key-chord-define-global "x2" 'split-window-below)
 (key-chord-define-global "x3" 'split-window-right)
 (key-chord-define-global "xx" 'smex)
-(key-chord-define-global "xf" 'ido-find-file)
+;;(key-chord-define-global "xf" 'ido-find-file)
+;;(key-chord-define-global "xf" 'ido-find-file)
 (key-chord-define-global "xb" 'ido-switch-buffer)
 (key-chord-define-global "xk" 'ido-kill-buffer)
 ;;(key-chord-define-global "xs" 'save-buffer) s-s is already defined
@@ -130,3 +131,4 @@
 
 (key-chord-define-global "zf" 'helm-projectile-find-file)
 (key-chord-define-global "zd" 'projectile-find-dir)
+(key-chord-define-global "xf" 'helm-find-files)
