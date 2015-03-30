@@ -47,7 +47,9 @@
 ;; My packages
 (defvar required-packages
   '(magit
-    projectile)
+    projectile
+    karma
+    js2-mode)
   "My packages, installed at launch")
 
 ;; my-packages.el
@@ -70,6 +72,10 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
+
+                                        ; js2-mode ;
+
+ (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
                                         ; Misc ;
 
@@ -172,3 +178,63 @@
 (global-git-gutter-mode -1)
 (add-hook 'after-init-hook 'color-theme-awesome)
 ;(add-hook 'after-init-hook (lambda () (load-theme 'color-theme-awesome t)))
+
+
+                                        ; ediff ;
+;; only hilight current diff:
+(setq-default ediff-highlight-all-diffs 'nil)
+
+;; turn off whitespace checking:
+(setq ediff-diff-options "-w")
+
+;; http://emacs.stackexchange.com/questions/7482/restoring-windows-and-layout-after-an-ediff-session
+(defvar ediff-last-windows nil
+  "Last ediff window configuration.")
+
+(defun ediff-restore-windows ()
+  "Restore window configuration to `ediff-last-windows'."
+  (set-window-configuration ediff-last-windows)
+  (remove-hook 'ediff-after-quit-hook-internal
+               'ediff-restore-windows))
+
+(defadvice ediff-buffers (around ediff-restore-windows activate)
+  (setq ediff-last-windows (current-window-configuration))
+  (add-hook 'ediff-after-quit-hook-internal 'ediff-restore-windows)
+  ad-do-it)
+
+(defadvice ediff-buffers3 (around ediff-restore-windows activate)
+  (setq ediff-last-windows (current-window-configuration))
+  (add-hook 'ediff-after-quit-hook-internal 'ediff-restore-windows)
+  ad-do-it)
+
+(defadvice ediff-files (around ediff-restore-windows activate)
+  (setq ediff-last-windows (current-window-configuration))
+  (add-hook 'ediff-after-quit-hook-internal 'ediff-restore-windows)
+  ad-do-it)
+
+(defadvice ediff-files3 (around ediff-restore-windows activate)
+  (setq ediff-last-windows (current-window-configuration))
+  (add-hook 'ediff-after-quit-hook-internal 'ediff-restore-windows)
+  ad-do-it)
+
+                                        ; ediff end ;
+
+
+                                        ; magit ;
+
+;; full screen magit-status
+
+(defadvice magit-status (around magit-fullscreen activate)
+  (window-configuration-to-register :magit-fullscreen)
+  ad-do-it
+  (delete-other-windows))
+
+(defun magit-quit-session ()
+  "Restores the previous window configuration and kills the magit buffer"
+  (interactive)
+  (kill-buffer)
+  (jump-to-register :magit-fullscreen))
+
+(define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+
+                                        ; magit end ;
