@@ -223,6 +223,7 @@
                                         ; magit ;
 
 ;; full screen magit-status
+;; http://whattheemacsd.com/setup-magit.el-01.html
 
 (defadvice magit-status (around magit-fullscreen activate)
   (window-configuration-to-register :magit-fullscreen)
@@ -235,6 +236,13 @@
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
 
+;; Will make push/pull fail if q i pressed while running
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+
+;; My own attempt att restoring windows after a magit-ediff session
+(defadvice magit-ediff (around ediff-restore-windows activate)
+  (setq ediff-last-windows (current-window-configuration))
+  (add-hook 'ediff-after-quit-hook-internal 'ediff-restore-windows)
+  ad-do-it)
 
                                         ; magit end ;
