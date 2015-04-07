@@ -129,8 +129,8 @@
 
                                         ; Projectile ;
 
-(Key-Chord-Define-Global "Zf" 'Helm-Projectile-Find-File)
-(Key-chord-define-global "zd" 'projectile-find-dir)
+(key-chord-define-global "Zf" 'Helm-Projectile-Find-File)
+(key-chord-define-global "zd" 'projectile-find-dir)
 (key-chord-define-global "xf" 'helm-find-files)
 
 
