@@ -129,6 +129,11 @@
 
                                         ; Projectile ;
 
-(key-chord-define-global "zf" 'helm-projectile-find-file)
-(key-chord-define-global "zd" 'projectile-find-dir)
+(Key-Chord-Define-Global "Zf" 'Helm-Projectile-Find-File)
+(Key-chord-define-global "zd" 'projectile-find-dir)
 (key-chord-define-global "xf" 'helm-find-files)
+
+
+                                        ; Workgroups 2 ;
+
+(setq wg-prefix-key (kbd "C-c c"))

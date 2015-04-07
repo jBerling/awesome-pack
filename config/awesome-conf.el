@@ -49,7 +49,9 @@
   '(magit
     projectile
     karma
-    js2-mode)
+    js2-mode
+    workgroups2
+    )
   "My packages, installed at launch")
 
 ;; my-packages.el
@@ -151,10 +153,10 @@
 (helm-mode 1)
 (helm-autoresize-mode 1)
 
-(setq helm-M-x-fuzzy-match t)
-(setq helm-recentf-fuzzy-match t)
-(setq helm-buffers-fuzzy-matching t)
-(setq helm-recentf-fuzzy-match t)
+;;(setq helm-M-x-fuzzy-match t)
+;;(setq helm-recentf-fuzzy-match t)
+;;(setq helm-buffers-fuzzy-matching t)
+;;(setq helm-recentf-fuzzy-match t)
 
                                         ; Projectile ;
 
@@ -217,8 +219,6 @@
   (add-hook 'ediff-after-quit-hook-internal 'ediff-restore-windows)
   ad-do-it)
 
-                                        ; ediff end ;
-
 
                                         ; magit ;
 
@@ -245,4 +245,16 @@
   (add-hook 'ediff-after-quit-hook-internal 'ediff-restore-windows)
   ad-do-it)
 
-                                        ; magit end ;
+                                        ; workgroups2 ;
+
+;; https://github.com/pashinin/workgroups2
+;; http://workgroups2.readthedocs.org/en/latest/
+
+(require 'workgroups2)
+
+(setq wg-session-file "~/.emacs_workgroups")
+
+(setq wg-emacs-exit-save-behavior           'save)      ; Options: 'save 'ask nil
+(setq wg-workgroups-mode-exit-save-behavior 'save)      ; Options: 'save 'ask nil
+
+(workgroups-mode 1)
