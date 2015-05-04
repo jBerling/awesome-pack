@@ -51,7 +51,8 @@
     karma
     js2-mode
     workgroups2
-    )
+    midje-mode
+    company)
   "My packages, installed at launch")
 
 ;; my-packages.el
@@ -258,3 +259,33 @@
 (setq wg-workgroups-mode-exit-save-behavior 'save)      ; Options: 'save 'ask nil
 
 (workgroups-mode 1)
+
+
+                                        ; Midje mode ;
+
+;;(require 'clojure-mode)
+;;(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
+(require 'midje-mode)
+(add-hook 'clojure-mode-hook 'midje-mode)
+
+
+                                        ; Company ;
+
+(add-hook 'after-init-hook 'global-company-mode)
+
+
+                                        ; Cider ;
+
+(add-hook 'cider-mode-hook #'eldoc-mode)
+
+;; The log will go to the buffer *nrepl-messages*.
+(setq nrepl-log-messages t)
+
+;; Prevent the auto-display of the REPL buffer in a separate window after connection is established:
+(setq cider-repl-pop-to-buffer-on-connect nil)
+
+(setq cider-show-error-buffer nil)
+
+;;(add-hook 'cider-repl-mode-hook #'company-mode)
+
+(add-hook 'cider-mode-hook #'company-mode)
