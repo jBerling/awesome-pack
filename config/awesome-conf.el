@@ -52,7 +52,11 @@
     js2-mode
     workgroups2
     midje-mode
-    company)
+    company
+    scss-mode
+    ;;go-mode
+    ;;web-mode
+    )
   "My packages, installed at launch")
 
 ;; my-packages.el
@@ -71,7 +75,7 @@
   (package-refresh-contents)
   (message "%s" " done.")
   ; install the missing packages
-  (dolist (p required-packages)
+  (dolist (p required-packages)l
     (when (not (package-installed-p p))
       (package-install p))))
 
@@ -173,6 +177,7 @@
 ;;(require 'company)
 ;;(add-hook 'after-init-hook 'global-company-mode)
 
+;;(add-hook 'after-init-hook 'global-company-mode)
 
                                         ; Misc ;
 
@@ -260,6 +265,10 @@
 
 (workgroups-mode 1)
 
+(defun wg-delete-current-workgroup ()
+  "Delete current workgroup"
+  (interactive)
+  (wg-delete-workgroup (wg-current-workgroup)))
 
                                         ; Midje mode ;
 
@@ -267,12 +276,6 @@
 ;;(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 (require 'midje-mode)
 (add-hook 'clojure-mode-hook 'midje-mode)
-
-
-                                        ; Company ;
-
-(add-hook 'after-init-hook 'global-company-mode)
-
 
                                         ; Cider ;
 
@@ -289,3 +292,15 @@
 ;;(add-hook 'cider-repl-mode-hook #'company-mode)
 
 (add-hook 'cider-mode-hook #'company-mode)
+
+
+;;                                         ; Web mode ;
+
+;; (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
